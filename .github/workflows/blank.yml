@@ -28,7 +28,7 @@ jobs:
         run: |
           sh -c 'mdfind -literal "kMDItemFSName = \"*.app\"" -count'
           echo $?
-          mdutil -s /
+          sh -c 'mdutil -s / | grep disabled'
           echo $?
           sh -c 'mdfind -literal "kMDItemFSName = \"*.app\"" -count'
           echo $?
