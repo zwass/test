@@ -27,8 +27,12 @@ jobs:
       - name: Run a multi-line script
         run: |
           sh -c 'mdfind -literal "kMDItemFSName = \"*.app\"" -count'
+          echo $?
           mdutil -s /
+          echo $?
           sh -c 'mdfind -literal "kMDItemFSName = \"*.app\"" -count'
+          echo $?
           mdutil -s /
+          echo $?
           
           
