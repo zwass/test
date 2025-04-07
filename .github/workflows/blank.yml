@@ -34,5 +34,24 @@ jobs:
           echo $?
           mdutil -s /
           echo $?
+  build2:
+    # The type of runner that the job will run on
+    runs-on: macos-13
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+
+      # Runs a set of commands using the runners shell
+      - name: Run a multi-line script
+        run: |
+          mdutil -s /
+          sh -c 'mdfind -literal "kMDItemFSName = \"*.app\"" -count'
+          echo $?
+          sh -c 'mdutil -s / | grep disabled'
+          echo $?
+          sh -c 'mdfind -literal "kMDItemFSName = \"*.app\"" -count'
+          echo $?
+          mdutil -s /
+          echo $?
           
           
