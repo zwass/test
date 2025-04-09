@@ -63,4 +63,7 @@ jobs:
       - name: test docker
         run: |
           ls -l /var/run/docker.sock
-          
+          who
+          whoami
+          groups
+          socat -u OPEN:/dev/null UNIX-CONNECT:/var/run/docker.sock
