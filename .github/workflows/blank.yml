@@ -56,6 +56,9 @@ jobs:
           
   docker:
     runs-on: ubuntu-22.04
+    container:
+      image: osquery/builder20.04:7e9ee0339
+      options: --privileged --init -v /var/run/docker.sock:/var/run/docker.sock --pid=host --user 1001
     steps:
       - name: test docker
         run: |
