@@ -54,4 +54,11 @@ jobs:
           mdutil -s /
           echo $?
           
+  docker:
+    runs-on: ubuntu-22.04
+    steps:
+      - name: test docker
+        run: |
+          docker info
+          docker containers
           
