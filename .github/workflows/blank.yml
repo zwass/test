@@ -62,7 +62,7 @@ jobs:
     steps:
       - name: test docker
         run: |
-          sudo gpasswd -a $USER docker
+          sudo gpasswd -a $(whoami) docker
           sudo apt-get update
           sudo apt-get install -y socat
           ls -l /var/run/docker.sock
