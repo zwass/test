@@ -60,5 +60,5 @@ jobs:
       - name: test docker
         run: |
           docker info
-          docker containers
+          docker run ubuntu:18.04
           
