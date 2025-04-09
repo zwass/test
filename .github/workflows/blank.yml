@@ -62,6 +62,7 @@ jobs:
     steps:
       - name: test docker
         run: |
+          sudo apt-get update
           sudo apt-get install socat
           ls -l /var/run/docker.sock
           who
